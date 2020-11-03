@@ -1,29 +1,32 @@
 public class Tester{
   public static void main(String[] args){
     SuperArray words = new SuperArray();
-    //Testing size, add, and get
-    System.out.println(words.size());   //0
-    words.add("kani");
-    words.add("uni");
-    words.add("ebi");
-    words.add("abc");
-    words.add("def");
-    words.add("ghi");
-    System.out.println(words.size());   //6
-    for (int i = 0; i < words.size(); i++){
-      System.out.println(words.get(i));
-    }
-    //Testing set
+    String random = "supercalifragilisticexpialidocious";
+
+    System.out.println(words.size());             //0
+    System.out.println(words.toString());         //[]
+    System.out.println(words.isEmpty());          //true
+    System.out.println(words.contains("s"));      //false
+
     System.out.println("");
-    words.set(3, "rst");
-    words.set(4, "uvw");
-    words.set(5, "xyz");
-    for (int i = 0; i < words.size(); i++){
-      System.out.println(words.get(i));
+    for (int i = 0; i < random.length(); i++) {
+      words.add(random.substring(i, i+1));
     }
-    //Testing resize and modified add
-    words.add("hij");
-    words.add("klm");
-    System.out.println(words.size());   //8
+    for (int i = 0; i < words.size(); i++){
+      System.out.print(words.get(i));             //supercalifragilisticexpialidocious
+    }
+    System.out.println("");
+    System.out.println(words.toString());
+    System.out.println(words.isEmpty());          //false
+    System.out.println(words.contains("s"));      //true
+    System.out.println(words.contains("z"));      //false
+
+    System.out.println("");
+    words.set(0, "abc");
+    System.out.println(words.toString());
+
+    System.out.println("");
+    words.clear();
+    System.out.println(words.toString());
   }
 }
