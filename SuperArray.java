@@ -15,9 +15,15 @@ public class SuperArray{
     return size;
   }
   public boolean add(String element){
-    if (data.length == size)
-      data[size] = element;
-      size += 1;
-      return true;
+    data[size] = element;
+    size += 1;
+    return true;
+  }
+  public String get(int index){
+    return data[index];
+  }
+  public String set(int index, String element){
+    data[index] = element;
+    return element;
   }
 }
