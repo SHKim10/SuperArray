@@ -31,6 +31,14 @@ public class SuperArray{
     data[index] = element;
   }
 
+  public String remove(int index){
+    String delete = data[index];
+    for (int i = index; i < size-1; i++){
+      data[i] = data[i+1];
+    }
+    return delete;
+  }
+
   public String get(int index){
     return data[index];
   }
@@ -38,6 +46,20 @@ public class SuperArray{
   public String set(int index, String element){
     data[index] = element;
     return element;
+  }
+
+  public boolean contains(String s){
+    for (int i = 0; i < size; i++){
+      if (data[i].equals(s)) return true;
+    }
+    return false;
+  }
+
+  public int indexOf(String s){
+    for (int i = 0; i < size; i++){
+      if (data[i].equals(s)) return i;
+    }
+    return -1;
   }
 
   private void resize(){
@@ -67,10 +89,11 @@ public class SuperArray{
     return answer;
   }
 
-  public boolean contains(String s){
+  public String[] toArray(){
+    String[] answer = new String[size];
     for (int i = 0; i < size; i++){
-      if (data[i].equals(s)) return true;
+      answer[i] = data[i];
     }
-    return false;
+    return answer;
   }
 }

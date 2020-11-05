@@ -19,13 +19,18 @@ public class Tester{
     System.out.println(words.toString());
     System.out.println(words.isEmpty());          //false
     System.out.println(words.contains("s"));      //true
+    System.out.println(words.indexOf("s"));       //0
     System.out.println(words.contains("z"));      //false
+    System.out.println(words.indexOf("z"));       //-1
 
     System.out.println("");
     words.set(0, "abc");
-    System.out.println(words.toString());
     words.add(1, "def");
-    System.out.println(words.toString());;
+    System.out.println(words.toString());
+    words.remove(0);
+    System.out.println(words.toString());
+    words.remove(1);
+    System.out.println(words.toString());
 
     System.out.println("");
     words.clear();
