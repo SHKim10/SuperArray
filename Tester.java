@@ -24,6 +24,8 @@ public class Tester{
     System.out.println("");
     words.set(0, "abc");
     System.out.println(words.toString());
+    words.add(1, "def");
+    System.out.println(words.toString());;
 
     System.out.println("");
     words.clear();

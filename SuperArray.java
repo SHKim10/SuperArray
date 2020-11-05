@@ -4,24 +4,31 @@ public class SuperArray{
 
   public SuperArray(){
     data = new String[10];
+    size = 0;
+  }
+
+  public SuperArray(int initialCapacity){
+    data = new String[initialCapacity];
+    size = 0;
   }
 
   public int size(){
-    int count = 0;
-    for (int i = 0; i < data.length; i++){
-      if (data[i] != null){
-        count++;
-      }
-    }
-    size = count;
     return size;
   }
 
   public boolean add(String element){
     if (data.length == size) resize();
     data[size] = element;
-    size += 1;
+    size ++;
     return true;
+  }
+
+  public void add(int index, String element){
+    if (size == data.length) resize();
+    for (int i = size++; i > index; i--){
+      data[i] = data[i-1];
+    }
+    data[index] = element;
   }
 
   public String get(int index){
@@ -41,6 +48,11 @@ public class SuperArray{
     data = arr;
   }
 
+  public void clear(){
+    data = new String[size];
+    size = 0;
+  }
+
   public boolean isEmpty(){
     return size == 0;
   }
@@ -48,7 +60,7 @@ public class SuperArray{
   public String toString(){
     if (size == 0) return "[]";
     String answer = "[";
-    for (int i = 0; i < size; i++){
+    for (int i = 0; i < size-1; i++){
       answer += data[i] + ", ";
     }
     answer += data[size-1] + "]";
@@ -60,10 +72,5 @@ public class SuperArray{
       if (data[i].equals(s)) return true;
     }
     return false;
-  }
-
-  public void clear(){
-    data = new String[size];
-    size = 0;
   }
 }
