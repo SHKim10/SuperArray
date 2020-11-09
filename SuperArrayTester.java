@@ -1,4 +1,4 @@
-public class Tester{
+public class SuperArrayTester{
   public static void main(String[] args){
     SuperArray words = new SuperArray();
     String random = "supercalifragilisticexpialidocious";
