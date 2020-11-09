@@ -12,6 +12,7 @@ public class SuperArrayTester{
     for (int i = 0; i < random.length(); i++) {
       words.add(random.substring(i, i+1));
     }
+    System.out.println(words.size());             //34
     for (int i = 0; i < words.size(); i++){
       System.out.print(words.get(i));             //supercalifragilisticexpialidocious
     }
@@ -20,8 +21,10 @@ public class SuperArrayTester{
     System.out.println(words.isEmpty());          //false
     System.out.println(words.contains("s"));      //true
     System.out.println(words.indexOf("s"));       //0
+    System.out.println(words.lastIndexOf("s"));   //33
     System.out.println(words.contains("z"));      //false
     System.out.println(words.indexOf("z"));       //-1
+    System.out.println(words.lastIndexOf("z"));   //-1
 
     System.out.println("");
     words.set(0, "abc");

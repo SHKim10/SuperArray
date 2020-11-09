@@ -63,6 +63,13 @@ public class SuperArray{
     return -1;
   }
 
+  public int lastIndexOf(String value){
+    for (int i = size-1; i >= 0; i--){
+      if (data[i].equals(value)) return i;
+    }
+    return -1;
+  }
+
   private void resize(){
     String[] arr = new String[data.length * 2];
     for (int i = 0; i < size; i++){
