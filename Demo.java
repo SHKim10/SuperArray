@@ -18,4 +18,23 @@ public class Demo{
     removeDuplicates(result);
     return result;
   }
+
+  public static SuperArray zip(SuperArray a, SuperArray b){
+    SuperArray result = new SuperArray();
+    int smallerArray = Math.min(a.size(), b.size());
+    for (int i = 0; i < smallerArray; i++){
+      result.add(a.get(i));
+      result.add(b.get(i));
+    }
+    if (a.size() > b.size()){
+      for (int i = b.size(); i < a.size(); i++){
+        result.add(a.get(i));
+      }
+    } else {
+      for (int i = a.size(); i < b.size(); i++){
+        result.add(b.get(i));
+      }
+    }
+    return result;
+  }
 }
