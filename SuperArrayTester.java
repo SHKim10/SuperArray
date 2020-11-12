@@ -38,7 +38,7 @@ public class SuperArrayTester{
     System.out.println("");
 
     words.clear();
-    System.out.println(words.toString());
+    System.out.println(words.toString());          //[]
     System.out.println("");
 
     SuperArray A = new SuperArray();
